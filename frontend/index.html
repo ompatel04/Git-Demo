@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Lets try out Cors - Cross Origin Resource Sharing</h1>
+    <div>How we will do it?</div>
+    <input id="a" type="text" placeholder="First value"> </input>
+    <input id="b" type="text" placeholder="Second value"></input>
+
+    <button onclick="sendRequest()">Find Sum</button>
+</body>
+<script>
+  async function sendRequest(){
+      const a=document.getElementById('a').value;
+      const b=document.getElementById('b').value ;       
+      const res=await axios.post("http://localhost:3000/sum",{
+      a:a,
+      b:b
+      })
+      console.log(res.data);
+      
+    }
+
+</script>
+
+</html>
